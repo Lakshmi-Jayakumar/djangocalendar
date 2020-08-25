@@ -1,0 +1,17 @@
+{% extends 'cal/base.html' %}
+{% block title %}
+Event
+{% endblock %}
+
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Sign up">
+</form>
+
+
+{% endblock%}

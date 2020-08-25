@@ -1,0 +1,22 @@
+{% extends 'cal/base.html' %}
+{% block title %}
+Event
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Pesonal Calender</h1>
+<div class="clearfix">
+    
+    {% if user.is_authenticated %}
+    <li>Hello, {{user.first_name}} </li>
+    <a class="btn btn-info left" href="{% url 'accounts:logout' %}"> Logout </a>
+
+    {% else %}
+    <a class="btn btn-info left" href="{% url 'accounts:register' %}"> Register </a>
+    <a class="btn btn-info right" href="{% url 'accounts:login' %}"> Login </a>
+    {% endif %}
+</div>
+  
+{% endblock %}
